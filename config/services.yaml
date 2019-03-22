@@ -37,8 +37,8 @@ nelmio_api_doc:
         host: localhost:8001
         schemes: [http, https]
         info:
-            title: Symfony JWT API
-            description: Symfony JWT API docs
+            title: Symfony 4 API + JWT
+            description: Symfony 4 API + JWT  docs
             version: 1.0.0
         tags:
             - name: "Productos"

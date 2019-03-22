@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Swagger\Annotations as SWG;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProductoRepository")
@@ -13,26 +14,31 @@ class Producto
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @SWG\Property(example="2")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @SWG\Property(example="Fideo")
      */
     private $nombre;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @SWG\Property(example="Sumesa")
      */
     private $marca;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @SWG\Property(example="Fideos")
      */
     private $categoria;
 
     /**
      * @ORM\Column(type="boolean")
+     * @SWG\Property(example="true")
      */
     private $estado;
 

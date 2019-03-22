@@ -30,20 +30,16 @@ class DefaultController extends AbstractController
      *         response=200,
      *         description="Success",
      *         @SWG\Schema(
-     *              @SWG\Property(property="code", type="number"),
-     *               @SWG\Property(property="username", type="string"),
-     *               @SWG\Property(property="email", type="string"),
-     *               @SWG\Property(property="payload",
-     *                      @SWG\Schema(
-     *                          @SWG\Property(property="token", type="string"),
-     *                          @SWG\Property(property="otro", type="string"),
-     *                      )
-     *              )
+     *              @Model(type=Producto::class)
      *         )
      *     ),
      *     @SWG\Response(
      *         response=401,
-     *         description="Invalid Token",
+     *         description="Error",
+     *          @SWG\Schema(
+     *              @SWG\Property(property="code", type="number", example="401"),
+     *              @SWG\Property(property="message", type="string",example="JWT Token not found")
+     *         )
      *     ),
      * )
      */
@@ -59,6 +55,7 @@ class DefaultController extends AbstractController
         $data = [];
         $index = 0;
         foreach ($productos as $producto){
+            $data[$index]['id'] = $producto->getId();
             $data[$index]['nombre'] = $producto->getNombre();
             $data[$index]['marca'] = $producto->getMarca();
             $data[$index]['categoria'] = $producto->getCategoria();
