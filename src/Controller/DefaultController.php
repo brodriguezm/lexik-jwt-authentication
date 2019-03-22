@@ -23,46 +23,27 @@ class DefaultController extends AbstractController
      * )
      * @SWG\Get(
      *     path="/api/productos",
-     *     summary="Get movies",
-     *     description="Get movies",
-     *     operationId="getMovies",
+     *     summary="Lista de productos",
+     *     description="Lista de productos",
      *     produces={"application/json"},
-     *     @SWG\Parameter(
-     *         name="nombre",
-     *         in="query",
-     *         description="Nombre del producto",
-     *         type="string",
-     *     ),
-     *     @SWG\Parameter(
-     *         name="marca",
-     *         in="query",
-     *         description="Marca del producto",
-     *         type="string",
-     *     ),
-     *     @SWG\Parameter(
-     *         name="categoria",
-     *         in="query",
-     *         description="Categoria a la que pertenece el producto",
-     *         type="string",
-     *     ),
-     *     @SWG\Parameter(
-     *         name="estado",
-     *         in="query",
-     *         description="Status del producto. 1 = Activo, 0 = Inactivo",
-     *         type="boolean",
-     *     ),
-     *      @SWG\Response(
-     *          response=200,
-     *          description="Some response",
-     *          @SWG\Schema(
-     *              @SWG\Property(property="id", type="string", description="UUID"),
-     *               @SWG\Property(property="email", type="string"
-     *              )
-     *          )
-     *      ),
      *     @SWG\Response(
-     *         response=400,
-     *         description="Error",
+     *         response=200,
+     *         description="Success",
+     *         @SWG\Schema(
+     *              @SWG\Property(property="code", type="number"),
+     *               @SWG\Property(property="username", type="string"),
+     *               @SWG\Property(property="email", type="string"),
+     *               @SWG\Property(property="payload",
+     *                      @SWG\Schema(
+     *                          @SWG\Property(property="token", type="string"),
+     *                          @SWG\Property(property="otro", type="string"),
+     *                      )
+     *              )
+     *         )
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Invalid Token",
      *     ),
      * )
      */

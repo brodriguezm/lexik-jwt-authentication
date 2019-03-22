@@ -43,6 +43,8 @@ nelmio_api_doc:
         tags:
             - name: "Productos"
               description: "Autenticacion con los metodos de productos"
+            - name: "Auth"
+              description: "Registro y Login de usuarios"
         securityDefinitions:
             Bearer:
                 type: apiKey
@@ -53,6 +55,6 @@ nelmio_api_doc:
             - Bearer: []
     areas: # to filter documented areas
         default:
-            path_patterns: [ ^/api/productos ]
+            path_patterns: [ ^/api/productos, ^/api/auth]
 #        path_patterns:
 #            - ^/api(?!/doc$) # Accepts routes under /api except /api/doc
